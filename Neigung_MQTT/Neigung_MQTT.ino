@@ -99,12 +99,12 @@ void loop() {
     if (umgekippt) {
       Serial.println("⚠️  Mülleimer ist umgekippt!");
       snprintf(payload, sizeof(payload),
-               "{\"rfid_id\":\"%s\", \"status\": \"umgekippt\", \"accZ\": %.2f}",
+               "{\"muelleimer_id\":\"%s\", \"status\": \"umgekippt\", \"accZ\": %.2f}",
                rfidID, z);
     } else {
       Serial.println("✅ Mülleimer steht.");
       snprintf(payload, sizeof(payload),
-               "{\"rfid_id\":\"%s\", \"status\": \"steht\", \"accZ\": %.2f}",
+               "{\"muelleimer_id\":\"%s\", \"status\": \"steht\", \"accZ\": %.2f}",
                rfidID, z);
     }
 

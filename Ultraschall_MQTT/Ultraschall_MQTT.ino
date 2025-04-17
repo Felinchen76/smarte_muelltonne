@@ -10,7 +10,9 @@ const int echoPin = 14;        // Echo-Pin zum Empfang des Signals
 #define TRIGGER_TIME 10        // Triggerdauer in Mikrosekunden
 #define TIMEOUT 30000          // Timeout für Messung in Mikrosekunden
 #define NUM_READINGS 5         // Anzahl der Messungen für Mittelwert
-#define FUELLIMIT_CM 10        // Schwelle für "voll"-Meldung
+
+// Feste RFID-ID für die Mülltonne
+const char* rfidId = "d383ab1b";
 
 // WLAN-Zugangsdaten
 const char* ssid = "WI-HA-LAB";
@@ -27,13 +29,10 @@ const char* mqttpw = "mqtt11";
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-// Feste RFID-ID für die Tonne (später dynamisch möglich)
-const char* rfidID = "d383ab1b";
+// Globale Variablen für Messung
+long duration;         // gemessene Zeitdauer in µs
+float distanceCm;      // berechnete Distanz in cm
 
-// Status-Variable: wurde "voll"-Status schon gemeldet?
-bool alreadyReported = false;
-
-// Setup-Funktion (Initialisierung)
 void setup() {
   Serial.begin(9600);                        // Serielle Verbindung für Debugging
   pinMode(trigPin, OUTPUT);                 // Trigger-Pin als Ausgang
@@ -49,11 +48,6 @@ void setup() {
 
   // Verbindung mit MQTT-Broker herstellen
   client.setServer(mqttServer, mqttPort);
-  connectToMQTT();
-}
-
-// Wiederverwendbare Funktion zur MQTT-Verbindung
-void connectToMQTT() {
   while (!client.connected()) {
     Serial.println("Connecting to MQTT...");
     if (client.connect(mqttClientID, mqttuser, mqttpw)) {
@@ -64,13 +58,14 @@ void connectToMQTT() {
       delay(2000);
     }
   }
+  client.disconnect(); // Erstmal wieder trennen
 }
 
-// Funktion zur Berechnung der durchschnittlichen Distanz
-float getAverageDistance() {
-  float totalDuration = 0;
-  int validReadings = 0;
+void loop() {
+  char payload[150];            // String für die MQTT-Nachricht
+  float totalDuration = 0;      // Summe für Durchschnittsbildung
 
+  // Mehrfachmessung zur Glättung
   for (int i = 0; i < NUM_READINGS; i++) {
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
@@ -79,52 +74,50 @@ float getAverageDistance() {
     digitalWrite(trigPin, LOW);
 
     long reading = pulseIn(echoPin, HIGH, TIMEOUT); // Zeit messen
+
     if (reading > 0) {
       totalDuration += reading;
-      validReadings++;
     }
     delay(50); // kurze Pause zwischen den Messungen
   }
 
-  if (validReadings == 0) return -1; // keine gültige Messung
-  float avgDuration = totalDuration / validReadings;
-  return (avgDuration * SOUND_VELOCITY) / 2; // Umrechnung in cm
-}
+  // Durchschnitt berechnen
+  duration = totalDuration / NUM_READINGS;
 
-// Hauptprogramm (wird ständig wiederholt)
-void loop() {
-  client.loop(); // MQTT-Verbindung aufrechterhalten
-
-  float distanceCm = getAverageDistance(); // Abstand messen
-  Serial.print("Distance (cm): ");
-  Serial.println(distanceCm);
-
-  if (distanceCm < 0) {
+  // Ergebnis auswerten
+  if (duration == 0) {
     Serial.println("Out of range");
-    return; // Messung ungültig
-  }
+    snprintf(payload, sizeof(payload), "{\"muelleimer_id\": \"%s\", \"status\": \"nicht messbar\"}", rfidId);
+  } else {
+    // Entfernung berechnen: (Zeit * Schallgeschwindigkeit) / 2 (Hin- und Rückweg)
+    distanceCm = (duration * SOUND_VELOCITY) / 2;
+    Serial.print("Distance (cm): ");
+    Serial.println(distanceCm);
 
-  // Wenn Tonne voll und noch nicht gemeldet → Sende-Meldung
-  if (distanceCm <= FUELLIMIT_CM && !alreadyReported) {
-    char payload[150];
-    snprintf(payload, sizeof(payload),
-      "{\"rfid_id\":\"%s\", \"status\":\"voll\", \"timestamp\":%lu}",
-      rfidID, millis());  // JSON-Nachricht erstellen
-
-    if (!client.connected()) {
-      connectToMQTT(); // MQTT-Verbindung wiederherstellen
+    // Status je nach Entfernung bestimmen
+    const char* status = "unbekannt";
+    if (distanceCm <= 7.0) {
+      status = "voll";
+    } else if (distanceCm <= 20.0) {
+      status = "halbvoll";
+    } else {
+      status = "leer";
     }
 
-    client.publish("Muelleimer.Fuellstand", payload); // Nachricht senden
-    Serial.println("Nachricht gesendet:");
-    Serial.println(payload);
-    alreadyReported = true; // Status setzen
+    // JSON Payload mit Status, Distanz und fester RFID
+    snprintf(payload, sizeof(payload),
+             "{\"muelleimer_id\": \"%s\",\"status\": \"%s\", \"distanz\": %.2f}", rfidId,
+             status, distanceCm);
   }
 
-  // Wenn Abstand wieder groß genug → Status zurücksetzen
-  if (distanceCm > (FUELLIMIT_CM + 5)) {
-    alreadyReported = false;
+  // MQTT-Nachricht senden
+  if (client.connect("ESP8266Client_GG", mqttuser, mqttpw)) {
+    client.publish("Muelleimer.Fuellstand", payload); // Senden an Topic
+    client.disconnect();
+  } else {
+    Serial.println("Konnte keine MQTT-Verbindung herstellen!");
   }
 
-  delay(2000); // Wartezeit bis zur nächsten Messung
+  delay(1000);  // Wartezeit bis zur nächsten Messung
+  client.loop(); // MQTT-Verarbeitung
 }
