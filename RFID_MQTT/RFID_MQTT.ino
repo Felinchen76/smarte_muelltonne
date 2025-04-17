@@ -85,7 +85,7 @@ void handleRFID() {
 
   // Erstellen der MQTT-Nachricht im JSON-Format
   char payload[100];
-  snprintf(payload, sizeof(payload), "{\"muelleimer_id\":\"%s\", \"zeit\":%lu}", rfidID.c_str(), millis());
+  snprintf(payload, sizeof(payload), "{\"muelleimer_id\":\"%s\"}", rfidID.c_str());
   client.publish("Muelleimer.Abholung", payload); // Nachricht senden
 
   // RFID-Karte „freigeben“ (Verbindung zum Tag beenden)
