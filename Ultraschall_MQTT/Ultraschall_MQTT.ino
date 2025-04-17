@@ -95,7 +95,7 @@ void loop() {
 
   // MQTT-Nachricht senden
   if (client.connect("ESP8266Client_GG", mqttuser, mqttpw)) {
-    client.publish("Gartenhaus.Distanz", attributes); // Senden an Topic
+    client.publish("Muelleimer.Distanz", attributes); // Senden an Topic
     client.disconnect();
   } else {
     Serial.println("Konnte keine MQTT-Verbindung herstellen!");
