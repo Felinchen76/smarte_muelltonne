@@ -22,6 +22,9 @@ const char* mqttpw = "mqtt11";
 WiFiClient espClient;
 PubSubClient client(espClient);
 
+// Feste RFID-ID (kann später dynamisch ersetzt werden)
+const char* rfidID = "d383ab1b";
+
 // Status-Tracking: wurde der Zustand "umgekippt" schon erkannt?
 bool vorherUmgekippt = false;
 
@@ -89,18 +92,20 @@ void loop() {
   // dann ist der Z-Wert hoch, wenn der Eimer umgekippt ist
   bool umgekippt = abs(z) > 7.0;
 
-  char payload[200]; // MQTT-Nachricht (JSON)
+  char payload[250]; // MQTT-Nachricht (JSON)
 
   // Nur senden, wenn sich der Status ändert (flatterfrei)
   if (umgekippt != vorherUmgekippt) {
     if (umgekippt) {
       Serial.println("⚠️  Mülleimer ist umgekippt!");
       snprintf(payload, sizeof(payload),
-               "{\"status\": \"umgekippt\", \"accZ\": %.2f}", z);
+               "{\"rfid_id\":\"%s\", \"status\": \"umgekippt\", \"accZ\": %.2f}",
+               rfidID, z);
     } else {
       Serial.println("✅ Mülleimer steht.");
       snprintf(payload, sizeof(payload),
-               "{\"status\": \"steht\", \"accZ\": %.2f}", z);
+               "{\"rfid_id\":\"%s\", \"status\": \"steht\", \"accZ\": %.2f}",
+               rfidID, z);
     }
 
     // MQTT-Nachricht veröffentlichen
