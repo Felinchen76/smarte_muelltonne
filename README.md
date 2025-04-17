@@ -136,5 +136,6 @@ Eine Backend-Komponente überwacht das Topic `Muelleimer.Neigung`. Bei Status �
 ## Autor / Entwicklung
 
 Ein Projekt im Bereich **Smart City** und **IoT** zur nachhaltigen, datengetriebenen Abfallwirtschaft.
+Berkant Koç, Felicitas Lock, Lisa Rauh und Yen Vu
 
 ---
