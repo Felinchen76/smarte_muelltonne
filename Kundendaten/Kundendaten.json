@@ -1,0 +1,162 @@
+[
+  {
+    "rfid": "d383ab1b",
+    "id": "kunde_001",
+    "vorname": "Yen",
+    "nachname": "Vu",
+    "adresse": "Hauptstraße 12, 10115 Berlin",
+    "email": "kunde1@example.com"
+  },
+  {
+    "rfid": "23f17db7",
+    "id": "kunde_002",
+    "vorname": "Lisa",
+    "nachname": "Rauh",
+    "adresse": "Musterweg 34, 50667 Köln",
+    "email": "kunde2@example.com"
+  },
+  {
+    "rfid": "1234abcd",
+    "id": "kunde_003",
+    "vorname": "Laura",
+    "nachname": "Schneider",
+    "adresse": "Bahnhofstraße 7, 20095 Hamburg",
+    "email": "kunde3@example.com"
+  },
+  {
+    "rfid": "deadbeef",
+    "id": "kunde_004",
+    "vorname": "Markus",
+    "nachname": "Neumann",
+    "adresse": "Marktplatz 5, 90402 Nürnberg",
+    "email": "kunde4@example.com"
+  },
+  {
+    "rfid": "cafebabe",
+    "id": "kunde_005",
+    "vorname": "Julia",
+    "nachname": "Hofmann",
+    "adresse": "Lindenstraße 8, 70173 Stuttgart",
+    "email": "kunde5@example.com"
+  },
+  {
+    "rfid": "facefeed",
+    "id": "kunde_006",
+    "vorname": "Daniel",
+    "nachname": "Krüger",
+    "adresse": "Wiesenweg 2, 93047 Regensburg",
+    "email": "kunde6@example.com"
+  },
+  {
+    "rfid": "beefcafe",
+    "id": "kunde_007",
+    "vorname": "Lena",
+    "nachname": "Fischer",
+    "adresse": "Bergstraße 20, 60313 Frankfurt",
+    "email": "kunde7@example.com"
+  },
+  {
+    "rfid": "feedbabe",
+    "id": "kunde_008",
+    "vorname": "Sebastian",
+    "nachname": "Weber",
+    "adresse": "Waldweg 9, 99084 Erfurt",
+    "email": "kunde8@example.com"
+  },
+  {
+    "rfid": "8badf00d",
+    "id": "kunde_009",
+    "vorname": "Nina",
+    "nachname": "Braun",
+    "adresse": "Ringstraße 3, 30159 Hannover",
+    "email": "kunde9@example.com"
+  },
+  {
+    "rfid": "0ddba11a",
+    "id": "kunde_010",
+    "vorname": "Tim",
+    "nachname": "Richter",
+    "adresse": "Schulweg 18, 34117 Kassel",
+    "email": "kunde10@example.com"
+  },
+  {
+    "rfid": "f00dbabe",
+    "id": "kunde_011",
+    "vorname": "Melanie",
+    "nachname": "Scholz",
+    "adresse": "Am See 4, 17489 Greifswald",
+    "email": "kunde11@example.com"
+  },
+  {
+    "rfid": "c0ffee00",
+    "id": "kunde_012",
+    "vorname": "Philipp",
+    "nachname": "Böhm",
+    "adresse": "Brückenstraße 23, 56068 Koblenz",
+    "email": "kunde12@example.com"
+  },
+  {
+    "rfid": "baadf00d",
+    "id": "kunde_013",
+    "vorname": "Sandra",
+    "nachname": "Wolf",
+    "adresse": "In den Gärten 15, 38100 Braunschweig",
+    "email": "kunde13@example.com"
+  },
+  {
+    "rfid": "b16b00b5",
+    "id": "kunde_014",
+    "vorname": "Andreas",
+    "nachname": "Maier",
+    "adresse": "Schillerstraße 6, 79098 Freiburg",
+    "email": "kunde14@example.com"
+  },
+  {
+    "rfid": "f00dcafe",
+    "id": "kunde_015",
+    "vorname": "Jana",
+    "nachname": "Peters",
+    "adresse": "Goethestraße 1, 93047 Regensburg",
+    "email": "kunde15@example.com"
+  },
+  {
+    "rfid": "deadc0de",
+    "id": "kunde_016",
+    "vorname": "Christian",
+    "nachname": "Lang",
+    "adresse": "Mühlstraße 77, 86150 Augsburg",
+    "email": "kunde16@example.com"
+  },
+  {
+    "rfid": "1ce0c0de",
+    "id": "kunde_017",
+    "vorname": "Katharina",
+    "nachname": "Weiß",
+    "adresse": "Parkallee 11, 28195 Bremen",
+    "email": "kunde17@example.com"
+  },
+  {
+    "rfid": "bada55ee",
+    "id": "kunde_018",
+    "vorname": "Leon",
+    "nachname": "Schröder",
+    "adresse": "Wasserstraße 88, 37073 Göttingen",
+    "email": "kunde18@example.com"
+  },
+  {
+    "rfid": "d15ea5e5",
+    "id": "kunde_019",
+    "vorname": "Isabel",
+    "nachname": "Günther",
+    "adresse": "Lindenweg 44, 89073 Ulm",
+    "email": "kunde19@example.com"
+  },
+  {
+    "rfid": "5ca1ab1e",
+    "id": "kunde_020",
+    "vorname": "Felix",
+    "nachname": "Hartmann",
+    "adresse": "Tannenweg 19, 84028 Landshut",
+    "email": "kunde20@example.com"
+  }
+]
