@@ -1,5 +1,5 @@
 // Datenpunkte vorbereiten
-createState('kunden.rfid_letzter', '', { read: true, write: false });
+createState('kunden.rfid', '', { read: true, write: false });
 createState('kunden.vorname', '', { read: true, write: false });
 createState('kunden.nachname', '', { read: true, write: false });
 createState('kunden.adresse', '', { read: true, write: false });
@@ -11,7 +11,7 @@ on({ id: 'mqtt.0.Muelleimer.Leerung', change: 'any' }, (obj) => {
         const payload = JSON.parse(obj.state.val);
         const rfid = payload.muelleimer_id;
 
-        setState('kunden.rfid_letzter', rfid, true);
+        setState('kunden.rfid', rfid, true);
 
         // Dateipfad zur Kundendaten-Datei (angepasst für ioBroker)
         const dateipfad = 'Kundendaten.json';
