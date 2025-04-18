@@ -23,9 +23,9 @@ Dieses Projekt realisiert ein System für smarte Mülltonnen, die eigenständig 
 
 Alle Geräte kommunizieren über **MQTT** mit einem zentralen Server. Topics:
 
-- `Muelleimer.Distanz`: Füllstand in cm
+- `Muelleimer.Fuellstand`: Distanz in cm zum Sensor und Status: voll, halbvoll, leer oder nicht messbar
 - `Muelleimer.Neigung`: Status „steht“ oder „umgekippt“
-- `Muelleimer.Abholung`: RFID-Daten bei Abholung
+- `Muelleimer.Leerung`: RFID-Daten bei Leerung
 
 ---
 
@@ -33,7 +33,7 @@ Alle Geräte kommunizieren über **MQTT** mit einem zentralen Server. Topics:
 
 ### 1. Füllstandsmessung mit HC-SR04
 
-**Zweck**: Erkennt, wann ein Mülleimer voll ist und sendet den Messwert per MQTT.
+**Zweck**: Erkennt, wann ein Mülleimer voll ist und sendet den Messwert und den Status per MQTT.
 
 ```cpp
 // Distance measurement using HC-SR04
@@ -50,7 +50,7 @@ void loop() {
     long duration = pulseIn(echoPin, HIGH, 30000);
     // Berechne Entfernung in cm
   }
-  // Sende Messwert an MQTT-Topic "Muelleimer.Distanz"
+  // Sende Messwert an MQTT-Topic "Muelleimer.Fuellstand"
 }
 ```
 
@@ -78,16 +78,16 @@ void loop() {
 
 ---
 
-### 3. RFID-Kontrolle bei Abholung
+### 3. RFID-Kontrolle bei Leerung
 
-**Zweck**: Liest die RFID-Karte beim Abholen der Tonne und sendet die ID zur Abrechnung.
+**Zweck**: Liest die RFID-Karte bei Leerung der Tonne und sendet die ID zur Abrechnung.
 
 ```cpp
 // RFID auslesen und MQTT senden
 if (rfid.PICC_IsNewCardPresent() && rfid.PICC_ReadCardSerial()) {
   String id = printHex(rfid.uid.uidByte, rfid.uid.size);
   snprintf(payload, sizeof(payload), "{"muelleimer_id":"%s", "zeit":%lu}", id.c_str(), millis());
-  client.publish("Muelleimer.Abholung", payload);
+  client.publish("Muelleimer.Leerung", payload);
 }
 ```
 
