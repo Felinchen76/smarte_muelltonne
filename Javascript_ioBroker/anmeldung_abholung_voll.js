@@ -26,10 +26,14 @@ on({ id: topic, change: 'any' }, (obj) => {
                     return;
                 }
 
+                // Zeitstempel in lesbares Datum umwandeln
+                const jetzt = new Date();
+                const datum = jetzt.toLocaleString('de-DE'); // z. B. 18.4.2025, 15:32:10
+
                 const eintrag = {
                     rfid: rfid,
                     adresse: kunde.adresse,
-                    timestamp: Date.now()
+                    timestamp: datum
                 };
 
                 // Vorhandene AbholListe laden
