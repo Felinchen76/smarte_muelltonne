@@ -1,3 +1,5 @@
+const topic = 'mqtt.0.Muelleimer.Leerung';
+
 // Datenpunkte vorbereiten
 createState('kunden.rfid', '', { read: true, write: false });
 createState('kunden.vorname', '', { read: true, write: false });
@@ -6,7 +8,7 @@ createState('kunden.adresse', '', { read: true, write: false });
 createState('kunden.email', '', { read: true, write: false });
 
 // Trigger bei neuer Abholmeldung via MQTT
-on({ id: 'mqtt.0.Muelleimer.Leerung', change: 'any' }, (obj) => {
+on({ id: topic, change: 'any' }, (obj) => {
     try {
         const payload = JSON.parse(obj.state.val);
         const rfid = payload.muelleimer_id;

@@ -1,10 +1,12 @@
+const topic = 'mqtt.0.Muelleimer.Neigung';
+
 // Trigger auf MQTT-Nachricht zum Neigungsstatus
-on({ id: 'mqtt.0.Muelleimer.Neigung', change: 'any' }, (obj) => {
+on({ id: topic, change: 'any' }, (obj) => {
     try {
         const payload = JSON.parse(obj.state.val);
         const rfid = payload.muelleimer_id;
         const status = payload.status;
-        log('Mülltonne Id: ${rfid}, Status: ${status}');
+        log(`Mülltonne Id: ${rfid}, Status: ${status}`);
 
         // Nur bei "umgekippt" reagieren
         if (status === 'umgekippt') {
