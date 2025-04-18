@@ -97,23 +97,23 @@ if (rfid.PICC_IsNewCardPresent() && rfid.PICC_ReadCardSerial()) {
 
 ```json
 // Füllstand
-Topic: Muelleimer.Distanz
-Payload: "18.52"
+Topic: Muelleimer.Fuellstand
+Payload: {"muelleimer_id": "d383ab1b", "status": "voll"}
 
 // Kippstatus
 Topic: Muelleimer.Neigung
-Payload: {"status": "umgekippt", "accZ": 9.81}
+Payload: {"muelleimer_id":"d383ab1b", "status": "umgekippt", "accZ": 8.77}
 
-// Abholung
-Topic: Muelleimer.Abholung
-Payload: {"muelleimer_id":"a1b2c3d4", "zeit":456789}
+// Leerung
+Topic: Muelleimer.Leerung
+Payload: {"muelleimer_id":"a1b2c3d4"}
 ```
 
 ---
 
 ## E-Mail-Benachrichtigung bei Umkippen
 
-Eine Backend-Komponente überwacht das Topic `Muelleimer.Neigung`. Bei Status „umgekippt“ wird automatisch eine E-Mail an den Kunden versendet.
+Ein Javascript innerhalb des ioBrokers überwacht das Topic `Muelleimer.Neigung`. Bei Status „umgekippt“ wird automatisch eine E-Mail an den Kunden versendet.
 
 ---
 
@@ -122,6 +122,13 @@ Eine Backend-Komponente überwacht das Topic `Muelleimer.Neigung`. Bei Status �
 - Bei jeder Abholung (RFID-Lesung) wird die Tonne registriert.
 - Abholungen werden monatlich aggregiert.
 - Auf dieser Basis erfolgt die Rechnungsstellung an den Kunden.
+
+---
+
+## Automatisierte Abholung
+
+- Ein Javascript innerhalb des ioBrokers überwacht das Topic `Muelleimer.Fuellstand`. Bei Status "voll" wird automatisch die Adresse der Mülltonne nach Abgleich der RFID-Id der Mülltonne und das Meldedatum in eine JSON Datei geschrieben
+- Die Liste mit gemeldeten Mülltonnen werden dann im Jarvis Dashboard zur Verfügung gestellt.
 
 ---
 
