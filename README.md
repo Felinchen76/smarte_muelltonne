@@ -86,7 +86,7 @@ void loop() {
 // RFID auslesen und MQTT senden
 if (rfid.PICC_IsNewCardPresent() && rfid.PICC_ReadCardSerial()) {
   String id = printHex(rfid.uid.uidByte, rfid.uid.size);
-  snprintf(payload, sizeof(payload), "{"muelleimer_id":"%s", "zeit":%lu}", id.c_str(), millis());
+  snprintf(payload, sizeof(payload), "{\"muelleimer_id\":\"%s\"}", rfidID.c_str());
   client.publish("Muelleimer.Leerung", payload);
 }
 ```
