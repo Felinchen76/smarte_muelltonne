@@ -164,11 +164,8 @@ Ein Javascript innerhalb des ioBrokers überwacht das Topic `Muelleimer.Neigung`
 
 ---
 
-### CFO – Berkant Koç (Chief Financial Officer)
-- [ ] Ermittlung der Kostenstruktur (Hardware, Infrastruktur etc.)  
-- [ ] Analyse von Zielmärkten und Technologietrends  
+### CFO – Berkant Koç (Chief Financial Officer)  
 - [ ] Erstellung von Finanzplänen  
-- [ ] Entwicklung von Geschäftsmodellen zur Monetarisierung  
 
 ---
 
