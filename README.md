@@ -142,6 +142,93 @@ Ein Javascript innerhalb des ioBrokers überwacht das Topic `Muelleimer.Neigung`
 | CFO (Chief Financial Officer) – Der Finanzverantwortliche | Berkant Koç | Ermittlung der Kostenstruktur (Komponenten, Infrastruktur), Analyse von Zielmärkten und Technologietrends, Erstellung von Finanzplänen und Geschäftsmodellen zur nachhaltigen Monetarisierung der Lösung. |
 
 ---
+# Projekt-Checkliste – Smarte Mülltonnen (Kanban-Übersicht)
+
+## 🆕 Initialized
+
+### CEO – Lisa Rauh (Chief Executive Officer)
+- [ ] Entwicklung der Gesamtstrategie und Vision  
+- [ ] Unternehmensführung koordinieren   
+
+---
+
+### CTO – Yen Vu (Chief Technology Officer)
+- [ ] Zusammenbau eines Hardware-Prototyps  
+- [ ] Erste Testläufe des Prototyps durchführen  
+
+---
+
+### CMO – Felicitas Lock (Chief Marketing Officer) 
+- [ ] Entwicklung der Marketingstrategie  
+- [ ] Aufbereitung der Projektergebnisse für Kunden und Partner    
+
+---
+
+### CFO – Berkant Koç (Chief Financial Officer)
+- [ ] Ermittlung der Kostenstruktur (Hardware, Infrastruktur etc.)  
+- [ ] Analyse von Zielmärkten und Technologietrends  
+- [ ] Erstellung von Finanzplänen  
+- [ ] Entwicklung von Geschäftsmodellen zur Monetarisierung  
+
+---
+
+### Alle
+- [ ] Durchführung von Pitch
+- [ ] Durchführung von Abschlusspräsentation
+
+---
+
+## 🔄 In Progress
+
+### CEO – Lisa Rauh (Chief Executive Officer)
+- [x] Entwicklung der Gesamtstrategie und Vision  
+- [x] Unternehmensführung koordinieren  
+- [x] Visualisierung der Daten im Jarvis Dashboard  
+- [x] Überwachung von Füllstand, Abholungen und Alarmmeldungen  
+- [x] Präsentation der gesammelten Projektdaten und Ergebnisse vorbereiten  
+
+---
+
+### CTO – Yen Vu (Chief Technology Officer) 
+- [x] Programmierung der Arduino-Skripte (ESP8266, Sensorik)  
+- [x] Einrichtung der MQTT-Kommunikation  
+- [x] Entwicklung der serverseitigen JavaScript-Automatisierungen (Warten auf Rückmeldung: Datenstruktur für Dashboard)
+
+---
+
+### CMO – Felicitas Lock (Chief Marketing Officer)
+- [x] Erstellung von Präsentationen und Pitch-Deck
+- [x] Präsentation der gesammelten Projektdaten und Ergebnisse vorbereiten    
+- [x] Automatisierung der Berechnung der Kostenstruktur und Umsatzplanung  
+
+---
+
+### CFO – Berkant Koç (Chief Financial Officer)
+- [x] Ermittlung der Kostenstruktur (Hardware, Infrastruktur etc.)  
+- [x] Analyse von Zielmärkten und Technologietrends  
+- [x] Entwicklung von Geschäftsmodellen zur Monetarisierung  
+
+---
+
+## ✅ Finished
+### CEO – Lisa Rauh (Chief Executive Officer) 
+
+---
+
+### CTO – Yen Vu (Chief Technology Officer)
+- [x] Entwicklung der IoT-Architektur    
+- [x] Einrichtung der MQTT-Kommunikation  
+- [x] Beschaffung Hardware für Prototyp
+
+---
+
+### CMO – Felicitas Lock (Chief Marketing Officer) 
+
+---
+
+### CFO – Berkant Koç (Chief Financial Officer)
+
+---
 
 ## Erweiterungsmöglichkeiten
 
