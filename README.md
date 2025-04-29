@@ -132,6 +132,17 @@ Ein Javascript innerhalb des ioBrokers überwacht das Topic `Muelleimer.Neigung`
 
 ---
 
+## Rollen und Aufgaben im Team
+
+| Rolle | Name | Aufgabenbereiche |
+|------|------|-------------------|
+| CEO (Chief Executive Officer) – Der Visionär | Lisa Rauh | Gesamtstrategie, Vision, Unternehmensführung. Visualisierung der Daten im Jarvis Dashboard zur Überwachung von Füllstand, Abholungen und Alarmmeldungen. Präsentation der gesammelten Projektdaten und Ergebnisse. |
+| CTO (Chief Technology Officer) – Der Technik-Experte | Yen Vu | Entwicklung der IoT-Architektur, Programmierung der Arduino-Skripte (ESP8266, Sensorik), Einrichtung der MQTT-Kommunikation sowie Entwicklung der serverseitigen JavaScript-Automatisierungen. |
+| CMO (Chief Marketing Officer) – Der Wachstumstreiber | Felicitas Lock | Erstellung und Durchführung von Präsentationen, Pitch-Deck und Abschlusspräsentation. Verantwortung für die Außenkommunikation, Marketingstrategie und Aufbereitung der Projektergebnisse für potenzielle Kunden und Partner. |
+| CFO (Chief Financial Officer) – Der Finanzverantwortliche | Berkant Koç | Ermittlung der Kostenstruktur (Komponenten, Infrastruktur), Analyse von Zielmärkten und Technologietrends, Erstellung von Finanzplänen und Geschäftsmodellen zur nachhaltigen Monetarisierung der Lösung. |
+
+---
+
 ## Erweiterungsmöglichkeiten
 
 - GPS-Modul zur genauen Standortübertragung
