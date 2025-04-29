@@ -190,8 +190,7 @@ Ein Javascript innerhalb des ioBrokers überwacht das Topic `Muelleimer.Neigung`
 ---
 
 ### CTO – Yen Vu (Chief Technology Officer) 
-- [x] Programmierung der Arduino-Skripte (ESP8266, Sensorik)  
-- [x] Einrichtung der MQTT-Kommunikation  
+- [x] Programmierung der Arduino-Skripte (ESP8266, Sensorik)   
 - [x] Entwicklung der serverseitigen JavaScript-Automatisierungen (Warten auf Rückmeldung: Datenstruktur für Dashboard)
 
 ---
