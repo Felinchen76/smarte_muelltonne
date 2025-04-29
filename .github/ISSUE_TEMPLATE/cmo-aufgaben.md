@@ -6,7 +6,7 @@ labels: task, CMO
 assignees: FelicitasLock
 ---
 
-# 🎯 CMO Aufgabenliste
+# CMO Aufgabenliste
 
 - [ ] Erstellung von Präsentationen und Pitch-Deck
 - [ ] Entwicklung der Marketingstrategie
