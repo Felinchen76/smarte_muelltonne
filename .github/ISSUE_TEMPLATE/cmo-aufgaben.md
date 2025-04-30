@@ -10,3 +10,4 @@ assignees: BerkantKoc
 
 - [ ] Entwicklung der Marketingstrategie
 - [ ] Aufbereitung der Projektergebnisse für Kunden und Partner
+- [ ] Analyse von Zielmärkten und Technologietrends
