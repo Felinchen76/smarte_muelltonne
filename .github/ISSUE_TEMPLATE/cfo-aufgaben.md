@@ -13,3 +13,4 @@ assignees: FelicitasLock
 - [ ] Erstellung von Finanzplänen
 - [ ] Entwicklung von Geschäftsmodellen zur Monetarisierung
 - [ ] Automatisierung der Berechnung der Kostenstruktur und Umsatzplanung
+- [ ] Präsentation der gesammelten Projektdaten und Ergebnisse vorbereiten
