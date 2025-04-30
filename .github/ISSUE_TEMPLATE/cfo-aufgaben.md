@@ -1,9 +1,9 @@
 ---
 name: CFO Aufgaben
-about: Aufgabenübersicht für den CFO (Berkant Koç)
+about: Aufgabenübersicht für den CFO (Felicitas Lock)
 title: "[CFO] Aufgaben"
 labels: task, CFO
-assignees: BerkantKoc
+assignees: FelicitasLock
 ---
 
 # CFO Aufgabenliste
