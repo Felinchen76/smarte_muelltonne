@@ -12,3 +12,4 @@ assignees: FelicitasLock
 - [ ] Analyse von Zielmärkten und Technologietrends
 - [ ] Erstellung von Finanzplänen
 - [ ] Entwicklung von Geschäftsmodellen zur Monetarisierung
+- [ ] Automatisierung der Berechnung der Kostenstruktur und Umsatzplanung
