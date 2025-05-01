@@ -57,7 +57,7 @@ Unsere Lösung ist eine smarte, datengetriebene Abfallentsorgung mit vernetzten 
 Jede Tonne ist mit mindestens drei zentralen IoT-Komponenten ausgestattet:
 
 - **Ein Ultraschallsensor**, der den Füllstand in Echtzeit misst. So wissen Entsorger und Nutzer jederzeit, ob die Tonne leer, halbvoll oder überfüllt ist.
-- **Ein Bewegungssensor**, der erkennt, ob eine Tonne steht oder umgekippt ist. Bei einem Sturz wird automatisch eine Alarmmeldung ausgelöst.
+- **Ein Neigungssensor**, der erkennt, ob eine Tonne steht oder umgekippt ist. Bei einem Sturz wird automatisch eine Alarmmeldung ausgelöst.
 - **Ein RFID-Modul**, das jede Leerung automatisch registriert. Damit ermöglichen wir eine faire, nutzungsbasierte Abrechnung – nicht mehr pauschal, sondern nach tatsächlicher Entleerung.
 
 All diese Daten werden per **MQTT-Protokoll** an unseren zentralen Server – den sogenannten **ioBroker** – übertragen.  
