@@ -49,36 +49,45 @@ Bonusprogramme, Hinweise zur Mülltrennung und CO₂-Tracking schaffen Anreize f
 
 ## Yen:
 
-### Leistungs-Folie
+Unsere Vision ist klar: Eine smartere, effizientere und nachhaltigere Abfallwirtschaft – mit digitalen Lösungen, die für alle Beteiligten echten Mehrwert schaffen.  
+Wie genau das funktioniert, welche Sensorik wir einsetzen und welche Architektur hinter Binova steckt, das zeige ich euch jetzt.
 
-Nachdem wir die Herausforderungen in der heutigen Abfallwirtschaft aufgezeigt haben, möchten wir Ihnen nun zeigen, wie Binova diese Probleme konkret löst – und welche Technologie dahinter steckt.
+Unsere smarte Mülltonne basiert auf drei zentralen IoT-Komponenten:
 
-Unsere Lösung ist eine smarte, datengetriebene Abfallentsorgung mit vernetzten Mülltonnen.  
-Jede Tonne ist mit mindestens drei zentralen IoT-Komponenten ausgestattet:
+- **Ein Ultraschallsensor** misst kontinuierlich den Füllstand – in Echtzeit.  
+  So wissen Nutzer und Entsorger immer, wann eine Leerung wirklich nötig ist.
 
-- **Ein Ultraschallsensor**, der den Füllstand in Echtzeit misst. So wissen Entsorger und Nutzer jederzeit, ob die Tonne leer, halbvoll oder überfüllt ist.
-- **Ein Neigungssensor**, der erkennt, ob eine Tonne steht oder umgekippt ist. Bei einem Sturz wird automatisch eine Alarmmeldung ausgelöst.
-- **Ein RFID-Modul**, das jede Leerung automatisch registriert. Damit ermöglichen wir eine faire, nutzungsbasierte Abrechnung – nicht mehr pauschal, sondern nach tatsächlicher Entleerung.
+- **Ein Neigungssensor** erkennt, ob eine Tonne steht oder umgekippt ist.  
+  Bei einem Sturz wird automatisch eine Alarmmeldung ausgelöst.
 
-All diese Daten werden per **MQTT-Protokoll** an unseren zentralen Server – den sogenannten **ioBroker** – übertragen.  
-Dort geschieht die eigentliche Intelligenz:
+- **Ein RFID-Modul** registriert jede Leerung eindeutig und zuverlässig.  
+  Dadurch schaffen wir die Grundlage für eine faire, nutzungsbasierte Abrechnung – statt pauschaler Gebühren.
 
-- Über **Regeln und Automatisierungen** erkennt das System z. B. vollgemeldete Tonnen, speichert den Zustand und generiert automatisch eine digitale Abholungsliste, die im Dashboard visualisiert wird.
-- Bei einem „Umkippen“-Event sendet das System eine **E-Mail-Benachrichtigung** an den zuständigen Nutzer oder das Unternehmen – automatisch und in Echtzeit.
+**Alle Daten** werden per **MQTT-Protokoll** an unseren zentralen Server – den **ioBroker** – gesendet. Dort findet die eigentliche Intelligenz statt:
+
+- Über **Regeln und Automatisierungen** erkennt das System z. B. vollgemeldete Tonnen,
+- generiert eine **digitale Abholungsliste**, die im Dashboard visualisiert wird,
+- und verschickt bei Bedarf automatisch **Benachrichtigungen per E-Mail** – etwa wenn eine Tonne umgekippt ist.
 
 ---
 
-### Architektur-Folie
+**Technisch betrachtet** arbeiten wir mit einer modernen Drei-Schichten-Architektur:
 
-Unsere Architektur gliedert sich dabei in drei Ebenen:
+1. **Edge** – direkt an der Mülltonne:  
+   Hier laufen die Sensoren und erfassen Daten lokal.
 
-1. **Edge**: Hier laufen die Sensoren in den Mülltonnen – die Datenerfassung geschieht lokal.  
-2. **Fog**: Die Daten werden über WLAN an den ioBroker übertragen, wo Regeln, Zustände und Schnittstellen zur Weiterverarbeitung laufen.  
-3. **Cloud**: Über Webserver, REST-APIs und E-Mail-Dienste werden Daten weitergegeben, visualisiert oder in andere Systeme integriert.
+2. **Fog** – auf unserem Server (ioBroker):  
+   Hier werden die Daten verarbeitet, Zustände erkannt und Regeln ausgelöst.
 
-Damit bieten wir nicht nur Effizienz, sondern auch Sicherheit, Transparenz und neue Möglichkeiten der Automatisierung – für Kommunen, Entsorgungsunternehmen und private Haushalte.
+3. **Cloud** – für Visualisierung und externe Dienste:  
+   Über REST-APIs und Webserver werden Daten in Dashboards, mobilen Apps oder E-Mail-Systeme integriert.
 
-**Binova macht sichtbar, was vorher unsichtbar war** – und schafft damit die Grundlage für eine smartere, nachhaltigere Stadt.
+---
+
+**Das Ergebnis:** Ein vollständig automatisiertes, skalierbares und transparentes System – für Städte, Entsorger und Haushalte.
+
+**Binova bringt Intelligenz dorthin, wo sie bisher gefehlt hat – in die Mülltonne.**  
+Und genau das ist der Schlüssel für die smarte Stadt von morgen.
 
 ---
 
