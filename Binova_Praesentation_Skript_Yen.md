@@ -5,7 +5,7 @@
 
 Nachdem wir die Herausforderungen in der heutigen Abfallwirtschaft aufgezeigt haben, möchten wir Ihnen nun zeigen, wie **Binova** diese Probleme konkret löst – und welche Technologie dahinter steckt.
 
-Unsere Lösung ist eine smarte, datengetriebene Abfallentsorgung mit vernetzten Mülltonnen. Jede Tonne ist mit drei zentralen IoT-Komponenten ausgestattet:
+Unsere Lösung ist eine smarte, datengetriebene Abfallentsorgung mit vernetzten Mülltonnen. Jede Tonne ist mit mindestes drei zentralen IoT-Komponenten ausgestattet:
 
 - **Ein Ultraschallsensor**, der den Füllstand in Echtzeit misst. So wissen Entsorger und Nutzer jederzeit, ob die Tonne leer, halbvoll oder überfüllt ist.
 - **Ein Bewegungssensor**, der erkennt, ob eine Tonne steht oder umgekippt ist. Bei einem Sturz wird automatisch eine Alarmmeldung ausgelöst.
