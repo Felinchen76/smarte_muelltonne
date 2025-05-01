@@ -52,7 +52,7 @@ Bonusprogramme, Hinweise zur Mülltrennung und CO₂-Tracking schaffen Anreize f
 Unsere Vision ist klar: Eine smartere, effizientere und nachhaltigere Abfallwirtschaft – mit digitalen Lösungen, die für alle Beteiligten echten Mehrwert schaffen.  
 Wie genau das funktioniert, welche Sensorik wir einsetzen und welche Architektur hinter Binova steckt, das zeige ich euch jetzt.
 
-Unsere smarte Mülltonne basiert auf drei zentralen IoT-Komponenten:
+Unsere smarte Mülltonne basiert auf minedstens drei zentralen IoT-Komponenten:
 
 - **Ein Ultraschallsensor** misst kontinuierlich den Füllstand – in Echtzeit.  
   So wissen Nutzer und Entsorger immer, wann eine Leerung wirklich nötig ist.
@@ -60,7 +60,7 @@ Unsere smarte Mülltonne basiert auf drei zentralen IoT-Komponenten:
 - **Ein Neigungssensor** erkennt, ob eine Tonne steht oder umgekippt ist.  
   Bei einem Sturz wird automatisch eine Alarmmeldung ausgelöst.
 
-- **Ein RFID-Modul** registriert jede Leerung eindeutig und zuverlässig.  
+- **Ein RFID-Modul**, wodurch jede Leerung eindeutig und zuverlässig registriert wird.   
   Dadurch schaffen wir die Grundlage für eine faire, nutzungsbasierte Abrechnung – statt pauschaler Gebühren.
 
 **Alle Daten** werden per **MQTT-Protokoll** an unseren zentralen Server – den **ioBroker** – gesendet. Dort findet die eigentliche Intelligenz statt:
