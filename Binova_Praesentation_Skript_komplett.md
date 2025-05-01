@@ -93,7 +93,34 @@ Und genau das ist der Schlüssel für die smarte Stadt von morgen.
 
 ## Berkant:
 
-*(Textabschnitt noch leer)*
+*Lassen Sie mich Ihnen eins sagen:
+Müll ist nicht das Problem.
+Das Problem ist, wie wir damit umgehen.
+
+Denn während Mülltonnen weiter analog rumstehen,
+haben sich unsere Städte, unsere Haushalte und unsere Daten längst weitergedreht.
+
+Wer braucht BINOVA?
+
+Entsorger, die wissen wollen, wann sich eine Fahrt lohnt – nicht nach Plan, sondern nach Bedarf.
+Haushalte, die mehr Komfort wollen – durch Automatisierung, Transparenz und Einsparung.
+Wohnbaugesellschaften, die Kontrolle und Effizienz brauchen – für tausende Standorte.
+Und ganz vorne mit dabei: Städte und Kommunen,
+die nicht mehr nur Abfall managen wollen – sondern eine smarte, digitale Infrastruktur aufbauen.
+
+Und jetzt? Jetzt schauen wir auf die Trends.
+
+Smart Cities? Nicht mehr Zukunft – Realität.
+Nachhaltigkeit? Kein Luxus – Standard.
+Digitalisierung? Nicht optional – Pflicht.
+
+Wir liefern die Lösung, auf die dieser Markt wartet:
+BINOVA ist nicht nur ein Produkt.
+Es ist die Verbindung von Technologie, Umwelt und klarem Nutzen.
+
+Und wir bringen sie genau da hin, wo sie hingehört:
+Mitten in die Städte. Mitten in die Gesellschaft.
+Und mitten ins 21. Jahrhundert*
 
 ---
 
