@@ -54,20 +54,20 @@ Wie genau das funktioniert, welche Sensorik wir einsetzen und welche Architektur
 
 Unsere smarte Mülltonne basiert auf minedstens drei zentralen IoT-Komponenten:
 
-- **Ein Ultraschallsensor** misst kontinuierlich den Füllstand – in Echtzeit.  
+- **Ein Ultraschallsensor** misst kontinuierlich den Füllstand in Echtzeit.  
   So wissen Nutzer und Entsorger immer, wann eine Leerung wirklich nötig ist.
 
 - **Ein Neigungssensor** erkennt, ob eine Tonne steht oder umgekippt ist.  
   Bei einem Sturz wird automatisch eine Alarmmeldung ausgelöst.
 
 - **Ein RFID-Modul**, wodurch jede Leerung eindeutig und zuverlässig registriert wird.   
-  Dadurch schaffen wir die Grundlage für eine faire, nutzungsbasierte Abrechnung – statt pauschaler Gebühren.
+  Dadurch schaffen wir die Grundlage für eine faire, nutzungsbasierte Abrechnung statt pauschaler Gebühren.
 
-**Alle Daten** werden per **MQTT-Protokoll** an unseren zentralen Server – den **ioBroker** – gesendet. Dort findet die eigentliche Intelligenz statt:
+**Alle Daten** werden per **MQTT-Protokoll** an unseren zentralen Server, den **ioBroker**, gesendet. Dort findet die eigentliche Intelligenz statt:
 
 - Über **Regeln und Automatisierungen** erkennt das System z. B. vollgemeldete Tonnen,
 - generiert eine **digitale Abholungsliste**, die im Dashboard visualisiert wird,
-- und verschickt bei Bedarf automatisch **Benachrichtigungen per E-Mail** – etwa wenn eine Tonne umgekippt ist.
+- und verschickt bei Bedarf automatisch **Benachrichtigungen per E-Mail**, etwa wenn eine Tonne umgekippt ist.
 
 ---
 
@@ -84,9 +84,9 @@ Unsere smarte Mülltonne basiert auf minedstens drei zentralen IoT-Komponenten:
 
 ---
 
-**Das Ergebnis:** Ein vollständig automatisiertes, skalierbares und transparentes System – für Städte, Entsorger und Haushalte.
+**Das Ergebnis:** Ein vollständig automatisiertes, skalierbares und transparentes System für Städte, Entsorger und Haushalte.
 
-**Binova bringt Intelligenz dorthin, wo sie bisher gefehlt hat – in die Mülltonne.**  
+**Binova bringt Intelligenz dorthin, wo sie bisher gefehlt hat: in die Mülltonne.**  
 Und genau das ist der Schlüssel für die smarte Stadt von morgen.
 
 ---
