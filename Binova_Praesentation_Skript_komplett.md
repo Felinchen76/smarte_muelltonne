@@ -6,10 +6,10 @@ Wir leben in einer Welt, in der Städte intelligenter werden, Fahrzeuge selbstst
 Die Welt verändert sich – aber ausgerechnet bei der Mülltonne bleibt alles beim Alten.
 
 Während allen den Neuerungen sind herkömmliche Mülltonnen heute noch so analog wie vor 50 Jahren.  
-Dies sorgt dafür, dass die Abfallentsorgung oft ineffizient – teuer und nicht dem heutigen Nachhaltigkeitsideal entspricht.
+Dies sorgt dafür, dass die Abfallwirtschaft oft ineffizient – teuer und nicht dem heutigen Nachhaltigkeitsideal entspricht.
 
 Entsorgungsunternehmen fahren nach starren Intervallen – egal ob Tonnen leer oder längst überfüllt sind.  
-Das kostet Zeit, Geld und produziert unnötige Emissionen.
+Das kostet Zeit, Geld und produziert unnötige Emissionen. Es fehlt an Übersicht.
 
 Auch auf Nutzerseite gibt es Probleme: Kein Überblick über den Füllstand, überfüllte Tonnen, verpasste Abholungen, Zusatzgebühren – all das führt zu Stress und Mehraufwand.
 
@@ -25,7 +25,7 @@ Denn heute zählen Effizienz, Nachhaltigkeit und Digitalisierung.
 **Wir bei Binovia haben dafür eine klare Antwort.**
 
 Unsere smarten Mülltonnen sind mit IoT-Sensoren ausgestattet.  
-Sie erfassen Füllstand, Bewegung und Zustand in Echtzeit, vernetzen sich automatisch mit Entsorgungsunternehmen, melden Schäden sofort – und ermöglichen eine exakte, faire Abrechnung.
+Sie erfassen und analysieren Daten, vernetzen sich automatisch mit Entsorgungsunternehmen, melden Schäden – und ermöglichen eine exakte, faire Abrechnung.
 
 **Wir glauben:** Es ist Zeit, auch die Abfallwirtschaft smart zu machen.  
 Mit Binovia vernetzen wir, was bisher vergessen wurde – und schaffen eine sauberere, nachhaltigere Zukunft.
@@ -160,3 +160,9 @@ Unser Geschäftsmodell basiert auf zwei Hauptsäulen zur Einnahmegenerierung, di
    Werbung in der App und Premium-Services wie Mülltonnenreinigung oder erweiterte Dashboards.
 
 **Diese Kombination schafft eine stabile, skalierbare Einkommensbasis** und stellt ein langfristiges Wachstum sicher.
+
+##Ende
+Lisa oder so: 
+Zusammengefasst: Mit Binovia vernetzen wir, was bisher vergessen wurde. Durch den Einsatz von Binova schaffen Sie  eine sauberere nachhaltigere und vorallem smarte Zukunft.
+
+
