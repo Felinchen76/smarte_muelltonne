@@ -52,7 +52,7 @@ Bonusprogramme, Hinweise zur Mülltrennung und CO₂-Tracking schaffen Anreize f
 Unsere Vision ist klar: Eine smartere, effizientere und nachhaltigere Abfallwirtschaft – mit digitalen Lösungen, die für alle Beteiligten echten Mehrwert schaffen.  
 Wie genau das funktioniert, welche Sensorik wir einsetzen und welche Architektur hinter Binova steckt, das zeige ich euch jetzt.
 
-Unsere smarte Mülltonne basiert auf minedstens drei zentralen IoT-Komponenten:
+Unsere smarte Mülltonne basiert auf mindestens drei zentralen IoT-Komponenten:
 
 - **Ein Ultraschallsensor** misst kontinuierlich den Füllstand in Echtzeit.  
   So wissen Nutzer und Entsorger immer, wann eine Leerung wirklich nötig ist.
@@ -71,16 +71,13 @@ Unsere smarte Mülltonne basiert auf minedstens drei zentralen IoT-Komponenten:
 
 ---
 
-**Technisch betrachtet** arbeiten wir mit einer modernen Drei-Schichten-Architektur:
+Technisch betrachtet arbeiten wir mit einer modernen Drei-Schichten-Architektur.  
 
-1. **Edge** – direkt an der Mülltonne:  
-   Hier laufen die Sensoren und erfassen Daten lokal.
+In der **Edge-Schicht**, also direkt an der Mülltonne, erfassen Sensoren wie der Ultraschallsensor, der Neigungssensor und das RFID-Modul lokal die relevanten Daten.  
 
-2. **Fog** – auf unserem Server (ioBroker):  
-   Hier werden die Daten verarbeitet, Zustände erkannt und Regeln ausgelöst.
+Diese Informationen werden dann an die **Fog-Schicht** weitergeleitet, wo auf unserem Server – dem ioBroker – die eigentliche Verarbeitung stattfindet: Zustände wie „voll“ oder „umgekippt“ werden erkannt, Regeln greifen automatisch und entsprechende Aktionen wie Alarmmeldungen oder Einträge in Abhollisten werden ausgelöst.  
 
-3. **Cloud** – für Visualisierung und externe Dienste:  
-   Über REST-APIs und Webserver werden Daten in Dashboards, mobilen Apps oder E-Mail-Systeme integriert.
+Die **Cloud-Schicht** schließlich dient der Anbindung externer Dienste. Über REST-APIs oder Webserver werden die Daten in Dashboards visualisiert, in mobile Anwendungen eingebunden oder als E-Mail-Benachrichtigungen weitergeleitet – für maximale Transparenz und Automatisierung.
 
 ---
 
