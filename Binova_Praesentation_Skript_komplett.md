@@ -75,7 +75,7 @@ Technisch betrachtet arbeiten wir mit einer modernen Drei-Schichten-Architektur.
 
 In der **Edge-Schicht**, also direkt an der Mülltonne, erfassen Sensoren wie der Ultraschallsensor, der Neigungssensor und das RFID-Modul lokal die relevanten Daten.  
 
-Diese Informationen werden dann an die **Fog-Schicht** weitergeleitet, wo auf unserem Server – dem ioBroker – die eigentliche Verarbeitung stattfindet: Zustände wie „voll“ oder „umgekippt“ werden erkannt, Regeln greifen automatisch und entsprechende Aktionen wie Alarmmeldungen oder Einträge in Abhollisten werden ausgelöst.  
+Diese Informationen werden dann an die **Fog-Schicht** weitergeleitet, wo auf unserem Server, dem ioBroker, die eigentliche Verarbeitung stattfindet: Zustände wie „voll“ oder „umgekippt“ werden erkannt, Regeln greifen automatisch und entsprechende Aktionen wie Alarmmeldungen oder Einträge in Abhollisten werden ausgelöst.  
 
 Die **Cloud-Schicht** schließlich dient der Anbindung externer Dienste. Über REST-APIs oder Webserver werden die Daten in Dashboards visualisiert, in mobile Anwendungen eingebunden oder als E-Mail-Benachrichtigungen weitergeleitet – für maximale Transparenz und Automatisierung.
 
