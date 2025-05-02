@@ -2,30 +2,36 @@
 
 ## Lisa:
 
-Wir leben in einer Welt, in der Städte intelligenter werden, Fahrzeuge selbstständig fahren und Prozesse datenbasiert optimiert sind.  
+Wir leben in einer Welt, in der Städte intelligenter werden, Fahrzeuge selbstständig fahren und Prozesse datenbasiert optimiert sind.
 Die Welt verändert sich – aber ausgerechnet bei der Mülltonne bleibt alles beim Alten.
+Während allen diesen Neuerungen sind herkömmliche Mülltonnen heute noch so analog wie vor 50 Jahren.
+Das führt dazu, dass die Abfallwirtschaft oft ineffizient, teuer – und nicht dem heutigen Nachhaltigkeitsideal entspricht.
 
-Während allen den Neuerungen sind herkömmliche Mülltonnen heute noch so analog wie vor 50 Jahren.  
-Dies sorgt dafür, dass die Abfallwirtschaft oft ineffizient – teuer und nicht dem heutigen Nachhaltigkeitsideal entspricht.
-
-Entsorgungsunternehmen fahren nach starren Intervallen – egal ob Tonnen leer oder längst überfüllt sind.  
+Entsorgungsunternehmen fahren nach starren Intervallen – egal ob Tonnen leer oder längst überfüllt sind.
 Das kostet Zeit, Geld und produziert unnötige Emissionen. Es fehlt an Übersicht.
-
 Auch auf Nutzerseite gibt es Probleme: Kein Überblick über den Füllstand, überfüllte Tonnen, verpasste Abholungen, Zusatzgebühren – all das führt zu Stress und Mehraufwand.
 
 Dazu kommen alltägliche Herausforderungen, die oft übersehen werden:
+Fehleranfällige Identifikationsmethoden verhindern eine präzise, nutzungsbasierte Abrechnung.
+Umgestürzte oder beschädigte Tonnen bleiben unbemerkt – mit Beschwerden, Mehraufwand und zusätzlichen Fahrten als Folge.
+Und ohne aktuelle Daten zu Standort, Zustand und Füllstand ist eine effiziente Steuerung kaum möglich.
 
-- Fehleranfällige Identifikationsmethoden verhindern eine präzise, nutzungsbasierte Abrechnung.
-- Umgestürzte oder beschädigte Tonnen bleiben unbemerkt – mit Beschwerden, Mehraufwand und zusätzlichen Fahrten als Folge.
-- Und ohne aktuelle Daten zu Standort, Zustand und Füllstand ist eine effiziente Steuerung kaum möglich.
-
-Diese Ineffizienzen kosten nicht nur bares Geld – sie bremsen Entsorger auch bei öffentlichen Ausschreibungen.  
+Diese Ineffizienzen kosten bares Geld – und bremsen Entsorger bei öffentlichen Ausschreibungen.
 Denn heute zählen Effizienz, Nachhaltigkeit und Digitalisierung.
+Wir glauben: Es ist Zeit, auch die Abfallwirtschaft smart zu machen.
+Mit Binovia vernetzen wir, was bisher vergessen wurde – und schaffen eine sauberere, nachhaltigere Zukunft.
+Mein Name ist Lisa und ich freue mich, gemeinsam mit meinem Team Binova vorzustellen.
 
-**Wir bei Binovia haben dafür eine klare Antwort.**
+Wir sind ein junges Startup bestehend aus unserem Technikgenie Yen als CTO, Berkant als unser kreativer Kopf der die Postion als CMO einnimmt und Felicitas behält den Überblick über unsere Finanzen. 
+Wir haben uns das Ziel gesetzt, die Abfallwirtschaft durch vernetzte Intelligenz grundlegend zu verbessern.
+Unsere Tonnen sind mit Sensoren für Füllstand, Gewicht, Temperatur und GPS ausgestattet – und erfassen Zustand, Nutzung und Standort in Echtzeit.
+So entsteht eine präzise Datengrundlage, die Entsorgern und Städten eine bislang unerreichte Transparenz bietet.
 
-Unsere smarten Mülltonnen sind mit IoT-Sensoren ausgestattet.  
-Sie erfassen und analysieren Daten, vernetzen sich automatisch mit Entsorgungsunternehmen, melden Schäden – und ermöglichen eine exakte, faire Abrechnung.
+Auf dieser Basis eröffnen sich völlig neue Möglichkeiten:
+Durch die gezielte Analyse der Daten lassen sich Entleerungen bedarfsgerecht planen, Routen effizient gestalten – und smarte Services entwickeln, die neue Erlösmodelle ermöglichen.
+Gleichzeitig denken wir Nachhaltigkeit weiter:
+Bonusprogramme, Hinweise zur Mülltrennung und CO₂-Tracking schaffen Anreize für bewussteres Verhalten – und fördern echte Beteiligung sowie aktiven Umweltschutz im Alltag.
+
 
 **Wir glauben:** Es ist Zeit, auch die Abfallwirtschaft smart zu machen.  
 Mit Binovia vernetzen wir, was bisher vergessen wurde – und schaffen eine sauberere, nachhaltigere Zukunft.
@@ -37,7 +43,6 @@ Wir haben uns das Ziel gesetzt, die Abfallwirtschaft durch vernetzte Intelligenz
 Unsere Tonnen sind mit Sensoren für Füllstand, Gewicht, Temperatur und GPS ausgestattet – und erfassen Zustand, Nutzung und Standort in Echtzeit.  
 So entsteht eine präzise Datengrundlage, die Entsorgern und Städten eine bislang unerreichte Transparenz bietet.
 
-> *Alle Sensoren oder nur das von der Folie?*
 
 Auf dieser Basis eröffnen sich völlig neue Möglichkeiten:  
 Durch die gezielte Analyse der Daten lassen sich Entleerungen bedarfsgerecht planen, Routen effizient gestalten – und smarte Services entwickeln, die neue Erlösmodelle ermöglichen.
