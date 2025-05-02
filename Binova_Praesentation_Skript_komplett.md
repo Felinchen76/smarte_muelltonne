@@ -165,6 +165,7 @@ Unser Geschäftsmodell basiert auf zwei Hauptsäulen zur Einnahmegenerierung, di
 
 ##Ende
 Lisa oder so: 
-Zusammengefasst: Mit Binovia vernetzen wir, was bisher vergessen wurde. Durch den Einsatz von Binova schaffen Sie  eine sauberere nachhaltigere und vorallem smarte Zukunft.
+Zusammengefasst: Mit Binovia vernetzen wir, was bisher vergessen wurde. 
+Daher lassut uns gemeinsam eine nachhaltigere und vorallem smarte Zukunft.
 
 
