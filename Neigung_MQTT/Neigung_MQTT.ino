@@ -97,12 +97,12 @@ void loop() {
   // Nur senden, wenn sich der Status ändert (flatterfrei)
   if (umgekippt != vorherUmgekippt) {
     if (umgekippt) {
-      Serial.println("⚠️  Mülleimer ist umgekippt!");
+      Serial.println("Mülleimer ist umgekippt!");
       snprintf(payload, sizeof(payload),
                "{\"muelleimer_id\":\"%s\", \"status\": \"umgekippt\", \"accZ\": %.2f}",
                rfidID, z);
     } else {
-      Serial.println("✅ Mülleimer steht.");
+      Serial.println("Mülleimer steht.");
       snprintf(payload, sizeof(payload),
                "{\"muelleimer_id\":\"%s\", \"status\": \"steht\", \"accZ\": %.2f}",
                rfidID, z);
