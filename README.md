@@ -29,7 +29,7 @@ Alle Geräte kommunizieren über **MQTT** mit einem zentralen Server. Topics:
 
 ---
 
-## 📁 Skripte
+## Arduino Skripte
 
 ### 1. Füllstandsmessung mit HC-SR04
 
@@ -131,6 +131,105 @@ Ein Javascript innerhalb des ioBrokers überwacht das Topic `Muelleimer.Neigung`
 - Die Liste mit gemeldeten Mülltonnen werden dann im Jarvis Dashboard zur Verfügung gestellt.
 
 ---
+
+# Javascript Hauptskript innerhalb des ioBrokers: Automatisierte Mülltonnenverarbeitung (IoBroker / MQTT)
+
+## Übersicht
+
+Dieses Skript verarbeitet automatisch Füllstandsmeldungen und RFID-Scans von smarten Mülltonnen. Ziel ist die vollständige Protokollierung und Anzeige über Jarvis (ioBroker Visualisierung).
+
+---
+
+## Dateien
+
+- `Kundendaten.json`  
+  → Enthält alle registrierten Tonnen mit RFID, Adresse und Kundendaten
+
+- `AbholListe.json`  
+  → Liste aller Tonnen, die sich als **"voll"** gemeldet haben
+
+- `Leerungen.json`  
+  → Liste aller erfolgreich **geleerten** Tonnen
+
+---
+
+## MQTT Topics
+
+- `mqtt.0.Muelleimer.Fuellstand`  
+  → Wird vom Ultraschallsensor gemeldet (`status`: leer, halbvoll, voll)
+
+- `mqtt.0.Muelleimer.Leerung`  
+  → Wird beim Scannen eines RFID-Tags an der Müllabfuhr gesendet
+
+---
+
+## Datenpunkte für Jarvis
+
+- `javascript.0.anmeldung.abholListeText`  
+  → Formatierte Textanzeige der aktuellen Abholliste
+
+- `javascript.0.anmeldung.abholListeJson`  
+  → JSON-Liste der Abholmeldungen (für weitere Logik oder Darstellung)
+
+- `javascript.0.leerung.leerungslisteText`  
+  → Formatierte Textanzeige der durchgeführten Leerungen
+
+- `javascript.0.leerung.leerungslisteJson`  
+  → JSON-Liste der Leerungen
+
+- `javascript.0.kunden.info`  
+  → Letzter erkannter Kunde beim RFID-Scan (inkl. leerungsdatum)
+
+---
+
+## Ablauf
+
+### 1. **Füllstandsmeldung (automatisch)**
+
+- Topic: `mqtt.0.Muelleimer.Fuellstand`
+- Inhalt: `{ "muelleimer_id": "<rfid>", "status": "voll" }`
+- Nur bei Status `voll` wird überprüft:
+  - Ob dieser RFID bereits **innerhalb der letzten 30 Tage** gemeldet wurde
+  - Falls nicht → wird in die `AbholListe.json` eingetragen
+  - Felder: `rfid`, `vorname`, `nachname`, `adresse`, `gemeldet_am`, `timestamp`
+
+---
+
+### 2. **Leerung per RFID-Scan**
+
+- Topic: `mqtt.0.Muelleimer.Leerung`
+- Inhalt: `{ "muelleimer_id": "<rfid>" }`
+- Bei erfolgreicher RFID-Zuordnung:
+  - Nur verarbeitet, wenn `fuellstand == "voll"` bekannt ist
+  - Neue Zeile in `Leerungen.json`
+  - Letzter Kunde wird in `kunden.info` gespeichert
+  - Der entsprechende Eintrag wird **aus `AbholListe.json` entfernt**
+
+---
+
+### 3. **Anzeigeaktualisierung (alle 30 Sekunden)**
+
+- Inhalte aus `AbholListe.json` und `Leerungen.json` werden:
+  - nach Datum sortiert (neueste oben)
+  - als Text (`Text`) und JSON (`Json`) im Datenpunkt gespeichert
+
+---
+
+## Besonderheiten
+
+- **Zeitvergleich** erfolgt über einen `timestamp` (Millisekunden), nicht über Text → vermeidet Duplikate
+- **Abholliste wird bereinigt**, wenn eine Tonne geleert wurde
+- **Verbindung zu Jarvis** über ioBroker-States
+
+---
+
+## Erweiterbar für:
+
+- E-Mail-Benachrichtigung bei Leerung
+- Gebührenberechnung nach Leerungen
+- Visualisierung über Zeit (Charts)
+- REST-API zur externen Abfrage
+
 
 ## Rollen und Aufgaben im Team
 
