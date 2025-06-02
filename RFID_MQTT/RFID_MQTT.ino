@@ -11,7 +11,7 @@ MFRC522 rfid(SS_PIN, RST_PIN);           // RFID-Objekt mit Pins initialisieren
 MFRC522::MIFARE_Key key;                // Schlüsselobjekt für MIFARE-Karten
 
 // WLAN-Zugangsdaten (SSID + Passwort deines Netzwerks)
-const char* ssid = "WI-HA-LAB";
+const char* ssid = "WI-HA-LAB-204";
 const char* password = "Smart99!?";
 
 // MQTT-Serverkonfiguration
