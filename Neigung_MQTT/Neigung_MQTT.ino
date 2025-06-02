@@ -8,7 +8,7 @@
 Adafruit_MPU6050 mpu;
 
 // WLAN-Zugangsdaten
-const char* ssid = "WI-HA-LAB";
+const char* ssid = "WI-HA-LAB-204";
 const char* password = "Smart99!?";
 
 // MQTT-Server-Konfiguration
