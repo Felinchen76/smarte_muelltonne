@@ -15,7 +15,7 @@ const int echoPin = 14;        // Echo-Pin zum Empfang des Signals
 const char* rfidId = "d383ab1b";
 
 // WLAN-Zugangsdaten
-const char* ssid = "WI-HA-LAB";
+const char* ssid = "WI-HA-LAB-204";
 const char* password = "Smart99!?";
 
 // MQTT-Server-Konfiguration
