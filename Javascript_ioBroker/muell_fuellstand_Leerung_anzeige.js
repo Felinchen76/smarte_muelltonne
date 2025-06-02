@@ -1,20 +1,24 @@
 const kundenDatei = 'Kundendaten.json';
 const abholDatei = 'AbholListe.json';
 const leerungDatei = 'Leerungen.json';
+const fuellstandDatei = 'FuellstandMap.json';
 
-// MQTT Topics
 const topicFuellstand = 'mqtt.0.Muelleimer.Fuellstand';
 const topicLeerung = 'mqtt.0.Muelleimer.Leerung';
 
-// Cache: letzter bekannter Füllstand je Tonne (rfid)
 let fuellstandMap = {};
 
-// Datenpunkte für Jarvis
-createState('javascript.0.anmeldung.abholListeText', '', { type: 'string', read: true, write: false });
-createState('javascript.0.anmeldung.abholListeJson', '[]', { type: 'string', read: true, write: false });
-createState('javascript.0.leerung.leerungslisteText', '', { type: 'string', read: true, write: false });
-createState('javascript.0.leerung.leerungslisteJson', '[]', { type: 'string', read: true, write: false });
-createState('javascript.0.kunden.info', '{}', { type: 'string', read: true, write: false }); // Letzter Kunde
+// Füllstand-Map beim Start laden
+readFile('javascript.admin', fuellstandDatei, (err, data) => {
+    if (!err && data) {
+        try {
+            fuellstandMap = JSON.parse(data);
+            log('FuellstandMap geladen.', 'info');
+        } catch (e) {
+            log('FuellstandMap konnte nicht geladen werden. Neue Map wird verwendet.', 'warn');
+        }
+    }
+});
 
 // -----------------------------
 // 1. MQTT: Füllstand empfangen
@@ -36,7 +40,9 @@ on({ id: topicFuellstand, change: 'any' }, obj => {
             const kunde = kunden.find(k => k.rfid === rfid);
             if (!kunde) return;
 
+            // Status speichern
             fuellstandMap[rfid] = status;
+            writeFile('javascript.admin', fuellstandDatei, JSON.stringify(fuellstandMap, null, 2));
 
             if (status === 'voll') {
                 const eintrag = {
@@ -45,7 +51,7 @@ on({ id: topicFuellstand, change: 'any' }, obj => {
                     nachname: kunde.nachname,
                     adresse: kunde.adresse,
                     gemeldet_am: zeitString,
-                    timestamp: zeitStempel // NEU
+                    timestamp: zeitStempel
                 };
 
                 readFile('javascript.admin', abholDatei, (err2, abholData) => {
@@ -54,11 +60,11 @@ on({ id: topicFuellstand, change: 'any' }, obj => {
                         try { liste = JSON.parse(abholData); } catch (_) { }
                     }
 
-                    const dreißigTageMs = 1000 * 60 * 60 * 24 * 30;
+                    const dreissigTageMs = 1000 * 60 * 60 * 24 * 30;
                     const bereitsGemeldet = liste.some(e =>
                         e.rfid === rfid &&
                         e.timestamp &&
-                        zeitStempel - e.timestamp < dreißigTageMs
+                        zeitStempel - e.timestamp < dreissigTageMs
                     );
 
                     if (bereitsGemeldet) {
@@ -93,7 +99,7 @@ on({ id: topicLeerung, change: 'any' }, obj => {
             if (!kunde) return;
 
             if (fuellstandMap[rfid] !== 'voll') {
-                log(`Leerung ignoriert: ${rfid} war nicht als "voll" markiert`, 'warn');
+                log(`Leerung ignoriert – ${rfid} war nicht als "voll" gespeichert.`, 'warn');
                 return;
             }
 
@@ -115,21 +121,16 @@ on({ id: topicLeerung, change: 'any' }, obj => {
                 writeFile('javascript.admin', leerungDatei, JSON.stringify(liste, null, 2));
                 log(`Leerung gespeichert: ${kunde.vorname} ${kunde.nachname}`, 'info');
 
-                // kunden.info aktualisieren
-                const kundeMitLeerung = {
-                    ...kunde,
-                    leerungsdatum: timestamp
-                };
-                setState('javascript.0.kunden.info', JSON.stringify(kundeMitLeerung), true);
+                // Optional: Füllstand zurücksetzen
+                fuellstandMap[rfid] = 'leer';
+                writeFile('javascript.admin', fuellstandDatei, JSON.stringify(fuellstandMap, null, 2));
 
-                // Aus Abholliste entfernen
+                // Abholliste bereinigen
                 readFile('javascript.admin', abholDatei, (err3, abholData) => {
                     if (err3 || !abholData) return;
-
                     try {
                         let abholListe = JSON.parse(abholData);
                         const neueListe = abholListe.filter(e => e.rfid !== rfid);
-
                         if (neueListe.length !== abholListe.length) {
                             writeFile('javascript.admin', abholDatei, JSON.stringify(neueListe, null, 2));
                             log(`RFID ${rfid} aus der Abholliste entfernt (nach Leerung).`, 'info');
@@ -143,60 +144,4 @@ on({ id: topicLeerung, change: 'any' }, obj => {
     } catch (err) {
         log('Fehler beim Verarbeiten der Leerung: ' + err, 'error');
     }
-});
-
-// ---------------------------------------------------
-// 3. Alle 30 Sekunden: Anzeige aktualisieren
-// ---------------------------------------------------
-schedule("*/30 * * * * *", () => {
-    // Abholliste anzeigen
-    readFile('javascript.admin', abholDatei, (err, data) => {
-        if (err || !data) {
-            setState('javascript.0.anmeldung.abholListeText', 'Keine Einträge vorhanden.');
-            setState('javascript.0.anmeldung.abholListeJson', '[]');
-            return;
-        }
-
-        try {
-            const eintraege = JSON.parse(data);
-            eintraege.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-
-            const text = eintraege.map(e => {
-                return `${e.adresse}
-RFID: ${e.rfid}
-Gemeldet am: ${e.gemeldet_am}`;
-            }).join('\n\n---\n\n');
-
-            setState('javascript.0.anmeldung.abholListeText', text);
-            setState('javascript.0.anmeldung.abholListeJson', JSON.stringify(eintraege, null, 2));
-        } catch (e) {
-            log('Fehler beim Parsen der Abholliste: ' + e, 'error');
-        }
-    });
-
-    // Leerungsliste anzeigen
-    readFile('javascript.admin', leerungDatei, (err, data) => {
-        if (err || !data) {
-            setState('javascript.0.leerung.leerungslisteText', 'Keine Leerungen vorhanden.');
-            setState('javascript.0.leerung.leerungslisteJson', '[]');
-            return;
-        }
-
-        try {
-            const eintraege = JSON.parse(data);
-            eintraege.sort((a, b) => new Date(b.leerungsdatum) - new Date(a.leerungsdatum));
-
-            const text = eintraege.map(e => {
-                return `RFID: ${e.rfid}
-Name: ${e.vorname} ${e.nachname}
-Adresse: ${e.adresse}
-Leerungsdatum: ${e.leerungsdatum}`;
-            }).join('\n\n---------------------\n\n');
-
-            setState('javascript.0.leerung.leerungslisteText', text);
-            setState('javascript.0.leerung.leerungslisteJson', JSON.stringify(eintraege, null, 2));
-        } catch (e) {
-            log('Fehler beim Parsen der Leerungsliste: ' + e, 'error');
-        }
-    });
 });
