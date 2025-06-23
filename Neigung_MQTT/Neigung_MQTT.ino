@@ -85,12 +85,12 @@ void loop() {
   sensors_event_t a, g, temp;
   mpu.getEvent(&a, &g, &temp);
 
-  // Beschleunigung entlang der Z-Achse lesen
+  // Beschleunigungswerte entlang Z- und Y-Achse
   float z = a.acceleration.z;
+  float y = a.acceleration.y;
 
-  // Logik: Wenn Sensor an der Seitenwand ist,
-  // dann ist der Z-Wert hoch, wenn der Eimer umgekippt ist
-  bool umgekippt = abs(z) > 7.0;
+  // Logik: Umgekippt, wenn Z oder Y deutlich vom Normalwert abweicht
+  bool umgekippt = (abs(z) > 7.0 || abs(y) > 7.0);
 
   char payload[250]; // MQTT-Nachricht (JSON)
 
@@ -114,5 +114,5 @@ void loop() {
   }
 
   client.loop(); // MQTT-Verarbeitung
-  delay(1000);   // Wartezeit bis zur nächsten Auswertung
+  delay(3);   // Wartezeit bis zur nächsten Auswertung
 }
