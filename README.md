@@ -238,7 +238,7 @@ Dieses Skript verarbeitet automatisch Füllstandsmeldungen und RFID-Scans von sm
 | CEO (Chief Executive Officer) – Der Visionär | Lisa Rauh | Gesamtstrategie, Vision, Unternehmensführung. Visualisierung der Daten im Jarvis Dashboard zur Überwachung von Füllstand, Abholungen und Alarmmeldungen. Präsentation der gesammelten Projektdaten und Ergebnisse. |
 | CTO (Chief Technology Officer) – Der Technik-Experte | Yen Vu | Entwicklung der IoT-Architektur, Programmierung der Arduino-Skripte (ESP8266, Sensorik), Einrichtung der MQTT-Kommunikation sowie Entwicklung der serverseitigen JavaScript-Automatisierungen. |
 | CFO (Chief Financial Officer) – Der Finanzverantwortliche| Felicitas Lock | Ermittlung der Kostenstruktur (Komponenten, Infrastruktur), Analyse von Zielmärkten und Technologietrends, Erstellung von Finanzplänen und Geschäftsmodellen zur nachhaltigen Monetarisierung der Lösung. |
-| CFO (Chief Marketng Officer) – Der Wachstumstreiber | Berkant Koç | Erstellung und Durchführung von Präsentationen, Pitch-Deck und Abschlusspräsentation. Verantwortung für die Außenkommunikation, Marketingstrategie und Aufbereitung der Projektergebnisse für potenzielle Kunden und Partner. |
+| CFO (Chief Marketng Officer) – Der Wachstumstreiber | Berkant Koç | Verantwortung für die Außenkommunikation, Marketingstrategie und Aufbereitung der Projektergebnisse für potenzielle Kunden und Partner. |
 
 ---
 
