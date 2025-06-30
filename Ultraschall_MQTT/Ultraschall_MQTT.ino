@@ -96,9 +96,9 @@ void loop() {
 
     // Status je nach Entfernung bestimmen
     const char* status = "unbekannt";
-    if (distanceCm <= 4.0) {
+    if (distanceCm <= 7.0) {
       status = "voll";
-    } else if (distanceCm <= 8.0) {
+    } else if (distanceCm <= 10.0) {
       status = "halbvoll";
     } else {
       status = "leer";
