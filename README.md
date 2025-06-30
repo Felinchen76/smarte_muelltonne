@@ -66,8 +66,13 @@ mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
 
 void loop() {
   mpu.getEvent(&a, &g, &temp);
+
+  // Beschleunigungswerte entlang Z- und Y-Achse
   float z = a.acceleration.z;
-  bool umgekippt = abs(z) > 7.0;
+  float y = a.acceleration.y;
+
+  // Logik: Umgekippt, wenn Z oder Y deutlich vom Normalwert abweicht
+  bool umgekippt = (abs(z) > 7.0 || abs(y) > 7.0);
 
   if (umgekippt != vorherUmgekippt) {
     // Sende "umgekippt" oder "steht" an "Muelleimer.Neigung"
