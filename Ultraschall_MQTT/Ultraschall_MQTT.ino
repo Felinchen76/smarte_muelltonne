@@ -78,7 +78,7 @@ void loop() {
     if (reading > 0) {
       totalDuration += reading;
     }
-    delay(50); // kurze Pause zwischen den Messungen
+    delay(30); // kurze Pause zwischen den Messungen
   }
 
   // Durchschnitt berechnen
@@ -118,6 +118,6 @@ void loop() {
     Serial.println("Konnte keine MQTT-Verbindung herstellen!");
   }
 
-  delay(1000);  // Wartezeit bis zur nächsten Messung
+  delay(500);  // Wartezeit bis zur nächsten Messung
   client.loop(); // MQTT-Verarbeitung
 }
